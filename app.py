@@ -18,8 +18,8 @@ def index():
 @app.route('/sayHello', methods=['POST'])
 def sayHello():
     name =  request.form['name'];
-    print name
-    return json.dumps({'status':'OK','name':name});
+
+    return json.dumps({'status':'OK','hello':name});
 
 
 if __name__ == '__main__':
