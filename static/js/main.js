@@ -1,4 +1,4 @@
-$(function() {
+function sendHello() {
     $('#button').click(function() {
         var name = $('#name-box').val();
         $.ajax({
@@ -13,4 +13,6 @@ $(function() {
             }
         });
     });
-});
+}
+
+$(document).ready(sendHello);

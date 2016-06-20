@@ -31,11 +31,9 @@ def sayHello():
     	new_person = Name(name, new_adj)
     	db.session.add(new_person)
     	db.session.commit()
-    	hello = 'Рад тебя видеть, '.decode('utf-8') + db.session.query(Adjective).filter_by(id=new_person.adj_id).first().adj + " " + new_person.name + "!"
+    	hello = "Рад тебя видеть, ".decode('utf-8') + db.session.query(Adjective).filter_by(id=new_person.adj_id).first().adj + " " + new_person.name + "!"
     else:
     	hello = "Рад тебя снова видеть, ".decode('utf-8') + db.session.query(Adjective).filter_by(id=person.adj_id).first().adj + " " + person.name + "!"
-
-
 
     return json.dumps({'status':'OK','hello': hello});
 
